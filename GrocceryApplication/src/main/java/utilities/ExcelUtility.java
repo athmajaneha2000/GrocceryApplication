@@ -16,7 +16,7 @@ public class ExcelUtility
 	
 	public static String getStringData(int a,int b,String sheet) throws IOException//read string value from exel sheet a- row b - coloumn
 	{
-		f=new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
+		f=new FileInputStream("C:\\Users\\Admin\\git\\GrocceryApplication\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
 		wb= new XSSFWorkbook(f);// workbook is inside the file
 		sh=wb.getSheet(sheet);   // it is a method used to get details from the sheet
 		XSSFRow r =sh.getRow(a);    // it is an inbuilt class used to read the data from the row, to get the method
@@ -25,7 +25,7 @@ public class ExcelUtility
 	}
 	public static String getIntegerData(int a,int b,String sheet) throws IOException
 	{
-		f=new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
+		f=new FileInputStream("C:\\Users\\Admin\\git\\GrocceryApplication\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
 		wb=new XSSFWorkbook(f);
 		sh=wb.getSheet(sheet);
 		XSSFRow r=sh.getRow(a);
@@ -35,7 +35,7 @@ public class ExcelUtility
 	}
 	  public static String getStringDetails(int a,int b,String sheet) throws IOException
 	{
-		f=new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
+		f=new FileInputStream("C:\\Users\\Admin\\git\\GrocceryApplication\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
 		wb=new XSSFWorkbook(f);
 		sh=wb.getSheet(sheet);
 		XSSFRow r=sh.getRow(a);
@@ -44,7 +44,7 @@ public class ExcelUtility
 	}
 	  public static String  getFloatData(int a,int b,String sheet) throws IOException
 	{
-	 f=new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
+	 f=new FileInputStream("C:\\Users\\Admin\\git\\GrocceryApplication\\GrocceryApplication\\src\\test\\resources\\TestData GrocceryLogin.xlsx");
 	 wb=new XSSFWorkbook(f);
 	 sh=wb.getSheet(sheet);
 	 XSSFRow r=sh.getRow(a);
