@@ -16,7 +16,7 @@ public class LoginPage
 	  @FindBy(name ="username") WebElement usernamefield;
 	  @FindBy(name ="password") WebElement passwordfield;
 	  @FindBy(xpath ="//button[text()=\"Sign In\"]") WebElement signinbutton;
-
+      @FindBy(xpath ="//p[text()=\"Dashboard\"]") WebElement dashboard;
 public void enterUsernameOnUsernameField(String username)
 {
 	usernamefield.sendKeys(username);	
@@ -28,6 +28,10 @@ public void enterPasswordOnPasswordField(String password)
 public void clickOnSigninnButton()
 {
 	signinbutton.click();
+}
+public boolean dasboardDisplayed()
+{
+	return dashboard.isDisplayed();
 }
 }
 	  

@@ -2,6 +2,7 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
@@ -10,7 +11,7 @@ import utilities.ExcelUtility;
 
 
 public class LoginTest extends Base
-{     @Test
+{     @Test(priority =1,description= "verifying user with valid credentials")
 	
 	 public void verifyUserWithValidCredentials() throws IOException
    {
@@ -20,8 +21,10 @@ public class LoginTest extends Base
 	loginpage.enterUsernameOnUsernameField(username);
 	loginpage.enterPasswordOnPasswordField(password);
 	loginpage.clickOnSigninnButton();
+	boolean isdashboarddisplayed =loginpage.dasboardDisplayed();
+	Assert.assertTrue(isdashboarddisplayed,"user is unable to login with valid credentials");
 }
-@Test
+@Test(priority=2,description="verifying user with valid username and invalid password")
 public void verifyUserWithValidUsernameAndInValidPassword() throws IOException
 
 {
@@ -32,7 +35,7 @@ public void verifyUserWithValidUsernameAndInValidPassword() throws IOException
 	loginpage.enterPasswordOnPasswordField(password);
 	loginpage.clickOnSigninnButton();
 }
-@Test
+@Test(priority=3,description="verifying user with invalid username and valid password")
 public void verifyUserWithInValidUsernameAndValidPassword() throws IOException
 
 {
@@ -42,8 +45,9 @@ public void verifyUserWithInValidUsernameAndValidPassword() throws IOException
 	loginpage.enterUsernameOnUsernameField(username);
 	loginpage.enterPasswordOnPasswordField(password);
 	loginpage.clickOnSigninnButton();
+	
 }
-@Test
+@Test(priority=4,description="verifying user with invalid credentials")
 public void verifyWithInvalidCredentials() throws IOException
 {
 	   String username= ExcelUtility.getStringData(2, 0, "GrocceryLoginPage");
@@ -52,5 +56,7 @@ public void verifyWithInvalidCredentials() throws IOException
 	loginpage.enterUsernameOnUsernameField(username);
 	loginpage.enterPasswordOnPasswordField(password);
 	loginpage.clickOnSigninnButton();
+	boolean isdashboarddisplayed =loginpage.dasboardDisplayed();
+	Assert.assertFalse(isdashboarddisplayed,"user is able to login with valid credentials");
 }
 }
